@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Staff extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'department_id', 'username', 'first_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -27,8 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function incidents()
+    public function department()
     {
-        return $this->hasMany('App\Incident');
+        return $this->belongsTo('App\Department');
     }
 }
