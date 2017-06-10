@@ -14,8 +14,7 @@ class IncidentController extends Controller
      */
     public function index()
     {
-        $incidents = Incident::all();
-        return response()->json($incidents);
+        return view('incidents.index');
     }
 
     /**

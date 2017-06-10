@@ -23,7 +23,7 @@ Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
     Route::resource('staffs', 'ApiControllers\StaffController');
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('users', 'UserController');
     Route::resource('categories', 'CategoryController');
     Route::resource('departments', 'DepartmentController');

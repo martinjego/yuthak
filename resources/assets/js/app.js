@@ -16,6 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('admin-header', require('./components/Layouts/AdminHeader.vue'));
+Vue.component('admin-sidebar', require('./components/Layouts/AdminSidebar.vue'));
 
 const app = new Vue({
     el: '#app'

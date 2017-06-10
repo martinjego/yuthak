@@ -14,8 +14,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        $staffs = Staff::all();
-        return response()->json($staffs);
+        return view('staffs.index');
     }
 
     /**
