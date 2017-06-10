@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'api'], function () {
+Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
+    Route::resource('users', 'ApiControllers\UserController');
+    Route::resource('categories', 'ApiControllers\CategoryController');
+    Route::resource('departments', 'ApiControllers\DepartmentController');
+    Route::resource('incidents', 'ApiControllers\IncidentController');
+    Route::resource('staffs', 'ApiControllers\StaffController');
+});
+
+Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UserController');
     Route::resource('categories', 'CategoryController');
     Route::resource('departments', 'DepartmentController');
