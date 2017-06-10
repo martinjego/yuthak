@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\AuthController@handleProviderCallback');
