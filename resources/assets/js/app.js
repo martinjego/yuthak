@@ -8,6 +8,11 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+import router from './routes.js';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -20,5 +25,6 @@ Vue.component('admin-header', require('./components/Layouts/AdminHeader.vue'));
 Vue.component('admin-sidebar', require('./components/Layouts/AdminSidebar.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
