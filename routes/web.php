@@ -37,3 +37,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 Route::get('login/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
