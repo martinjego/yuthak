@@ -823,8 +823,9 @@ module.exports = g;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -1747,7 +1748,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -1777,11 +1777,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
         console.log('Component mounted.');
     }
+});
+$(document).ready(function () {
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+        $("#arrow").toggleClass("glyphicon-chevron-right");
+    });
+    $("#wew0").click(function (e) {
+        e.preventDefault();
+        $("#wew1").toggle();
+        $("#wew2").toggle();
+        $("#toggless").toggleClass("glyphicon-chevron-down");
+    });
 });
 
 /***/ }),
@@ -31781,7 +31819,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/html/LaravelProjects/yuthak/resources/assets/js/components/Example.vue"
+Component.options.__file = "/home/choy/yuthak/resources/assets/js/components/Example.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31815,7 +31853,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/html/LaravelProjects/yuthak/resources/assets/js/components/Layouts/AdminHeader.vue"
+Component.options.__file = "/home/choy/yuthak/resources/assets/js/components/Layouts/AdminHeader.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminHeader.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31849,7 +31887,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "/var/www/html/LaravelProjects/yuthak/resources/assets/js/components/Layouts/AdminSidebar.vue"
+Component.options.__file = "/home/choy/yuthak/resources/assets/js/components/Layouts/AdminSidebar.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] AdminSidebar.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -31877,18 +31915,72 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container"
+    attrs: {
+      "id": "wrapper"
+    }
   }, [_c('div', {
-    staticClass: "row"
+    attrs: {
+      "id": "sidebar-wrapper"
+    }
+  }, [_c('ul', {
+    staticClass: "sidebar-nav"
+  }, [_c('li', {
+    staticClass: "sidebar-brand"
+  }, [_c('a', {
+    attrs: {
+      "href": "#toggless",
+      "id": "wew0"
+    }
+  }, [_vm._v("\n                        Dashboard "), _c('span', {
+    staticClass: "glyphicon glyphicon-chevron-right",
+    attrs: {
+      "id": "toggless"
+    }
+  })])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "data-toggle": "tab",
+      "href": "#menu1",
+      "id": "wew1"
+    }
+  }, [_vm._v("Menu 1")])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "data-toggle": "tab",
+      "href": "#menu2",
+      "id": "wew2"
+    }
+  }, [_vm._v("Menu 2")])])])]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "page-content-wrapper"
+    }
+  }, [_c('a', {
+    attrs: {
+      "href": "#arrow"
+    }
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-1"
+    staticClass: "maxh inline",
+    attrs: {
+      "id": "menu-toggle"
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-chevron-left",
+    attrs: {
+      "id": "arrow"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "container-fluid inline contents"
   }, [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "tab-content"
   }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Sidebar Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an Sidebar component!\n                ")])])])])])
+    staticClass: "tab-pane fade in active",
+    attrs: {
+      "id": "menu1"
+    }
+  }, [_vm._v("\n                        Hello\n                    ")]), _vm._v(" "), _c('div', {
+    staticClass: "tab-pane fade in",
+    attrs: {
+      "id": "menu2"
+    }
+  }, [_vm._v("\n                        World\n                    ")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -31934,19 +32026,44 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
+  return _c('nav', {
+    staticClass: "navbar navbar-default"
   }, [_c('div', {
-    staticClass: "row"
+    staticClass: "container-fluid"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-1"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("header Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an header component!\n                ")])])])])])
+    staticClass: "navbar-header"
+  }, [_c('a', {
+    staticClass: "navbar-brand",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("ERS")])]), _vm._v(" "), _c('ul', {
+    staticClass: "nav navbar-nav navbar-right"
+  }, [_c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "glyphicon glyphicon-bell"
+  })])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-envelope",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])]), _vm._v(" "), _c('li', [_c('a', {
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-sign-out",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
