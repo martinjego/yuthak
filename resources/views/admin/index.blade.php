@@ -1,5 +1,5 @@
 @extends('app')
 
 @section('content')
-    Welcome, Staff!
+    Welcome, Admin!
 @endsection

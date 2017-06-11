@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin.login');
-});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,8 +25,21 @@ Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
     Route::resource('staffs', 'ApiControllers\StaffController');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::resource('users', 'UserController');
+    Route::resource('categories', 'CategoryController');
+    Route::resource('departments', 'DepartmentController');
+    Route::resource('incidents', 'IncidentController');
+    Route::resource('staffs', 'StaffController');
+});
+
+Route::group(['prefix' => 'staff'], function () {
+    Route::get('/login', 'Auth\StaffLoginController@showLoginForm')->name('staff.login');
+    Route::post('/login', 'Auth\StaffLoginController@login')->name('staff.login.submit');
+    Route::get('/', 'StaffController@index')->name('staff.dashboard');
     Route::resource('categories', 'CategoryController');
     Route::resource('departments', 'DepartmentController');
     Route::resource('incidents', 'IncidentController');

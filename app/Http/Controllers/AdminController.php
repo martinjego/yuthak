@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StaffController extends Controller
+class AdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,7 +13,7 @@ class StaffController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:staff');
+        $this->middleware('auth:admin');
     }
 
     /**
@@ -23,6 +23,6 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('staff');
+        return view('admin');
     }
 }
