@@ -12,7 +12,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Emergency Response System
                 </a>
             </div>
 
@@ -23,7 +23,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-        
+
 
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

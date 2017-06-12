@@ -14,8 +14,8 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('auth.login');
+})->middleware('guest');
 
 Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
     Route::resource('users', 'ApiControllers\UserController');
